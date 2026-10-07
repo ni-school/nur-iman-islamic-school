@@ -9,3 +9,126 @@
 <section class="contact section" id="kontak"><div class="container contact-grid"><div><span class="eyebrow">HUBUNGI KAMI</span><h2>Mari berdiskusi tentang pendidikan terbaik untuk putra-putri Anda.</h2><p class="address">Jl. Tumaritis 1 No. 8, Harjamukti, Cimanggis, Depok</p><a class="btn btn-dark" href="https://wa.me/6285218889192" target="_blank" rel="noopener">WhatsApp Admin</a></div><div class="map-card"><div class="map-icon">⌖</div><h3>NUR IMAN ISLAMIC SCHOOL</h3><p>PKBM NUR IMAN</p><a class="text-link" target="_blank" rel="noopener" href="https://maps.app.goo.gl/Vww3KEgYdHxDn97V7">Buka lokasi di Google Maps →</a></div></div></section></main>
 <footer><div class="container footer-grid"><div><strong>NUR IMAN ISLAMIC SCHOOL</strong><p>PKBM NUR IMAN • Pendidikan Islami, cerdas, beradab, dan berkarakter.</p></div><div><span>PPDB 2027/2028</span><b>Gelombang 1</b></div></div><div class="copyright">© 2026 NUR IMAN ISLAMIC SCHOOL / PKBM NUR IMAN</div></footer>
 <script>const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open)});document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));document.getElementById('ppdbForm').addEventListener('submit',function(e){e.preventDefault();const f=new FormData(this);const msg=`Assalamu'alaikum Admin PKBM NUR IMAN.%0A%0ASaya ingin mendaftar PPDB 2027/2028.%0A%0ANama Orang Tua/Wali: ${encodeURIComponent(f.get('wali'))}%0ANama Calon Siswa: ${encodeURIComponent(f.get('siswa'))}%0AJenjang: ${encodeURIComponent(f.get('jenjang'))}%0ANo. WhatsApp: ${encodeURIComponent(f.get('wa'))}%0A%0AMohon informasi selanjutnya. Terima kasih.`;window.open('https://wa.me/6285218889192?text='+msg,'_blank')});</script></body></html>
+<script>
+(function () {
+  const form = document.getElementById('ppdbForm');
+  if (!form) return;
+
+  const style = document.createElement('style');
+  style.textContent = `
+    .porter-card {
+      margin-top: 22px;
+      padding: 20px;
+      border: 1px solid rgba(15,76,58,.16);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
+    }
+    .porter-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .porter-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #0f4c3a;
+      color: #fff;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .porter-label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: #0f4c3a;
+    }
+    .porter-head h3 {
+      margin: 3px 0 0;
+    }
+    .porter-card p {
+      line-height: 1.6;
+      margin: 10px 0 16px;
+    }
+    .porter-journey {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .porter-journey span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: #f1f3f2;
+      color: #68706c;
+      font-size: 10px;
+      font-weight: 600;
+    }
+    .porter-journey .done {
+      background: #dfeee8;
+      color: #0f4c3a;
+    }
+    .porter-journey .current {
+      background: #0f4c3a;
+      color: #fff;
+    }
+    .porter-next {
+      padding: 13px 15px;
+      border-left: 3px solid #c9a45c;
+      background: #faf7ef;
+      border-radius: 8px;
+    }
+    .porter-next small {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: #75633e;
+    }
+    .porter-next strong {
+      display: block;
+      line-height: 1.5;
+    }
+  `;
+  document.head.appendChild(style);
+
+  const card = document.createElement('div');
+  card.className = 'porter-card';
+  card.innerHTML = `
+    <div class="porter-head">
+      <span class="porter-icon">🧭</span>
+      <div>
+        <span class="porter-label">PORTER NI SCHOOL</span>
+        <h3>Pemandu Perjalanan PPDB</h3>
+      </div>
+    </div>
+
+    <p>
+      PORTER membantu Anda memahami posisi dalam perjalanan PPDB
+      dan langkah berikutnya.
+    </p>
+
+    <div class="porter-journey">
+      <span class="done">Minat</span>
+      <span class="done">Kontak</span>
+      <span class="current">Formulir</span>
+      <span>Pembayaran</span>
+      <span>Berkas</span>
+      <span>Verifikasi</span>
+    </div>
+
+    <div class="porter-next">
+      <small>LANGKAH BERIKUTNYA</small>
+      <strong>Konfirmasi dengan Admin NI School melalui WhatsApp.</strong>
+    </div>
+  `;
+
+  form.insertAdjacentElement('afterend', card);
+})();
+                                       </script>
