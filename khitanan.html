@@ -126,20 +126,40 @@
       border: 3px solid rgba(200, 164, 90, 0.6);
     }
 
-    .facts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 24px 0;
-    }
+    
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+  max-width: 500px;
+}
 
-    .fact {
-      padding: 8px 12px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 8px;
-      font-size: 13px;
-    }
+.fact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 76px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid #e5d7b8;
+  border-radius: 14px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.fact-icon {
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
+  fill: none;
+  stroke: #b69a5a;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
     .button {
       display: inline-block;
@@ -366,10 +386,38 @@
           </p>
 
           <div class="facts">
-            <span class="fact">📅 27 Desember 2026</span>
-            <span class="fact">🎯 Target 200 peserta</span>
-            <span class="fact">🩺 Metode laser</span>
-            <span class="fact">⏱️ Satu hari</span>
+            
+<span class="fact">
+  <svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="3.5" y="5.5" width="17" height="15" rx="2"/>
+    <path d="M7.5 3.5v4M16.5 3.5v4M3.5 10h17M8 14h3M8 17h2"/>
+  </svg>
+  <span>27 Desember 2026</span>
+</span>
+<span class="fact">
+  <svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="9"/>
+    <circle cx="12" cy="12" r="5.5"/>
+    <circle cx="12" cy="12" r="2"/>
+    <path d="M13.5 10.5 20 4M15.5 4H20v4.5"/>
+  </svg>
+  <span>Target 200 peserta</span>
+</span>
+<span class="fact">
+  <svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M8 3.5h8M10 3.5v5l-5 8.7A2.2 2.2 0 0 0 6.9 20h10.2a2.2 2.2 0 0 0 1.9-2.8L14 8.5v-5"/>
+    <path d="M7.5 15h9M10 12h4"/>
+  </svg>
+  <span>Metode laser</span>
+</span>
+<span class="fact">
+  <svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="13" r="8.5"/>
+    <path d="M9 2.5h6M12 4.5v2M12 13l4-3M8.5 2.5h7"/>
+  </svg>
+  <span>Satu hari</span>
+</span>
+
           </div>
 
           <a class="button button-gold"
