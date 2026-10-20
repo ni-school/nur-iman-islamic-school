@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galeri Kegiatan | NI School</title>
+<style>
+:root{--green:#174d3b;--sage:#e8efe8;--cream:#faf9f4;--ink:#26372e;--muted:#68766d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+header{background:white;border-bottom:1px solid #e6e9e2;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.brand{color:var(--green);font-weight:800;letter-spacing:1.5px;font-size:19px}
+.brand small{display:block;font-size:10px;letter-spacing:2px;font-weight:500}
+nav a{color:var(--green);text-decoration:none;font-size:13px;margin-left:16px}
+main{max-width:1180px;margin:auto;padding:42px 5% 64px}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;color:#71866f;font-size:11px;font-weight:bold}
+h1{color:var(--green);font-size:clamp(32px,5vw,52px);line-height:1.12;margin:8px 0 12px}
+.intro{color:var(--muted);max-width:620px;margin:0 0 28px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;background:white;border:1px solid #e5e9e1;border-radius:18px;overflow:hidden;margin:28px 0 42px}
+.hero-photo{min-height:290px;background:linear-gradient(135deg,#e2e9df,#f5f0e3);display:grid;place-items:center;padding:25px;text-align:center;color:#657765}
+.hero-photo span{font-size:48px;display:block}
+.hero-copy{padding:clamp(22px,4vw,42px);align-self:center}
+.hero-copy h2{font-family:Georgia,serif;font-size:clamp(25px,3vw,36px);line-height:1.2;color:var(--green);margin:10px 0}
+.hero-copy p{color:var(--muted)}
+.signature{font-size:12px;font-weight:bold;color:var(--green);margin-top:22px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px}
+h2{color:var(--green)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 25px}
+.filters button{border:1px solid #d8e0d5;background:white;border-radius:30px;padding:9px 15px;color:var(--green);cursor:pointer}
+.filters button.active,.filters button:hover{background:var(--green);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:white;border:1px solid #e6e9e2;border-radius:14px;overflow:hidden}
+.photo{aspect-ratio:4/3;background:var(--sage);display:grid;place-items:center;text-align:center;padding:20px;color:#667a69}
+.photo span{font-size:34px;display:block}
+.card-copy{padding:16px}
+.card-copy small{color:#7a8b78;text-transform:uppercase;font-size:10px;letter-spacing:1px}
+.card-copy h3{margin:5px 0;color:var(--green);font-size:17px}
+.card-copy p{font-size:13px;color:var(--muted);margin:0}
+.note{background:#f0f2e9;border-radius:12px;padding:16px;color:#596a59;font-size:13px;margin-top:25px}
+footer{background:var(--green);color:white;text-align:center;padding:27px 15px;font-size:13px}
+[hidden]{display:none!important}
+@media(max-width:760px){header{padding:14px 5%}nav a{margin-left:8px;font-size:12px}main{padding-top:30px}.hero{grid-template-columns:1fr}.hero-photo{min-height:190px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{display:block}}
+@media(max-width:430px){nav a:first-child{display:none}.grid{gap:10px}.card-copy{padding:12px}.card-copy h3{font-size:15px}.filters button{font-size:12px;padding:8px 11px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">NUR IMAN<small>ISLAMIC SCHOOL</small></div>
+  <nav><a href="index.html">Beranda</a><a href="#galeri">Galeri</a></nav>
+</header>
+<main>
+  <div class="eyebrow">Dokumentasi sekolah</div>
+  <h1>Galeri Kegiatan</h1>
+  <p class="intro">Setiap kegiatan adalah bagian dari perjalanan tumbuh. Jelajahi cerita belajar, kebersamaan, dan pengalaman peserta didik NI School.</p>
+
+  <section class="hero">
+    <div class="hero-photo"><div><span>🤝</span>Foto unggulan dipasang di sini</div></div>
+    <div class="hero-copy">
+      <div class="eyebrow">Momen kebersamaan</div>
+      <h2>Saling Menggenggam, Belajar Bertumbuh</h2>
+      <p>Pendidikan bukan hanya tentang apa yang kita pelajari, tetapi juga bagaimana kita berjalan bersama. Dalam genggaman sederhana, kita belajar tentang kebersamaan, kepedulian, dan saling menjaga.</p>
+      <div class="signature">NI SCHOOL · Belajar bersama, tumbuh bersama.</div>
+    </div>
+  </section>
+
+  <section id="galeri">
+    <div class="section-head">
+      <div><div class="eyebrow">Jejak perjalanan belajar</div><h2>Dokumentasi Kegiatan</h2></div>
+    </div>
+    <div class="filters" aria-label="Filter galeri">
+      <button class="active" data-filter="all">Semua Kegiatan</button>
+      <button data-filter="belajar">Kegiatan Belajar</button>
+      <button data-filter="karakter">Pembiasaan & Karakter</button>
+      <button data-filter="luar">Kegiatan Luar</button>
+      <button data-filter="bersama">Kebersamaan</button>
+    </div>
+    <div class="grid">
+      <article class="card" data-category="luar">
+        <div class="photo"><div><span>🌿</span>Foto Field Trip</div></div>
+        <div class="card-copy"><small>Kunjungan edukatif</small><h3>Belajar Melampaui Ruang Kelas</h3><p>Pengalaman baru yang memperluas wawasan dan kebersamaan.</p></div>
+      </article>
+      <article class="card" data-category="belajar">
+        <div class="photo"><div><span>📚</span>Foto Seminar Literasi</div></div>
+        <div class="card-copy"><small>Literasi</small><h3>Membuka Jendela Pengetahuan</h3><p>Membaca, memahami, dan menumbuhkan kebiasaan belajar.</p></div>
+      </article>
+      <article class="card" data-category="karakter">
+        <div class="photo"><div><span>🏕️</span>Foto Pramuka</div></div>
+        <div class="card-copy"><small>Pengembangan karakter</small><h3>Belajar Menjadi Tangguh Bersama</h3><p>Melatih disiplin, kemandirian, dan kerja sama.</p></div>
+      </article>
+      <article class="card" data-category="belajar">
+        <div class="photo"><div><span>💻</span>Foto Laboratorium Komputer</div></div>
+        <div class="card-copy"><small>Keterampilan digital</small><h3>Menjelajah Dunia Digital</h3><p>Belajar teknologi melalui praktik dan eksplorasi.</p></div>
+      </article>
+      <article class="card" data-category="karakter">
+        <div class="photo"><div><span>🏆</span>Foto Prestasi</div></div>
+        <div class="card-copy"><small>Apresiasi</small><h3>Prestasi adalah Jejak Perjuangan</h3><p>Menghargai proses, ketekunan, dan usaha bersama.</p></div>
+      </article>
+      <article class="card" data-category="bersama">
+        <div class="photo"><div><span>🤝</span>Foto Gandengan Tangan 1</div></div>
+        <div class="card-copy"><small>Kebersamaan</small><h3>Saling Menggenggam, Belajar Bertumbuh</h3><p>Perjalanan tumbuh terasa bermakna ketika kita saling menjaga.</p></div>
+      </article>
+      <article class="card" data-category="bersama">
+        <div class="photo"><div><span>💚</span>Foto Gandengan Tangan 2</div></div>
+        <div class="card-copy"><small>Kepedulian</small><h3>Dalam Genggaman, Ada Kepedulian</h3><p>Sebuah genggaman dapat mengingatkan kita untuk saling menguatkan.</p></div>
+      </article>
+      <article class="card" data-category="belajar">
+        <div class="photo"><div><span>🎤</span>Foto Penampilan Siswa</div></div>
+        <div class="card-copy"><small>Kreativitas</small><h3>Berani Tampil, Berani Bertumbuh</h3><p>Memberi ruang untuk mengekspresikan kemampuan dan percaya diri.</p></div>
+      </article>
+      <article class="card" data-category="karakter">
+        <div class="photo"><div><span>🌱</span>Foto Kegiatan Bersama</div></div>
+        <div class="card-copy"><small>Pengalaman belajar</small><h3>Bertumbuh Melalui Pengalaman</h3><p>Setiap pengalaman membuka kesempatan untuk belajar hal baru.</p></div>
+      </article>
+    </div>
+    <div class="note"><strong>Catatan pemasangan:</strong> kotak foto di atas masih berupa placeholder, bukan dokumentasi asli. Foto asli perlu diunggah ke repositori dan dipasang sebelum halaman dipublikasikan.</div>
+  </section>
+</main>
+<footer>NUR IMAN ISLAMIC SCHOOL<br>Belajar bersama, tumbuh bersama.</footer>
+<script>
+document.querySelectorAll(".filters button").forEach(button=>{
+  button.addEventListener("click",()=>{
+    document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+    button.classList.add("active");
+    const filter=button.dataset.filter;
+    document.querySelectorAll(".card").forEach(card=>{
+      card.hidden=filter!=="all" && card.dataset.category!==filter;
+    });
+  });
+});
+</script>
+</body>
+</html>
