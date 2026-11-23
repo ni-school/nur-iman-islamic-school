@@ -1,25 +1,45 @@
-# DEPLOYMENT GUIDE — NIIS WEBSITE
+# DEPLOYMENT GUIDE — NIIS WEBSITE RELEASE
 
-## Sebelum unggah
-1. Minta pihak sekolah mengonfirmasi nominal biaya SD/SMP, biaya formulir, dan seluruh ketentuan PPDB 2027/2028. Data biaya di paket masih mengikuti situs lama.
-2. Pastikan akun/repository tujuan adalah `ni-school/nur-iman-islamic-school`. Baseline branch `main` tidak boleh ditimpa saat tahap review.
-3. Gunakan branch khusus, misalnya `niis-website-release`, untuk pemeriksaan awal.
+## Release state
 
-## Isi yang diunggah
-Unggah **isi folder `NIIS_WEBSITE_FINAL_RELEASE/`** ke root folder publikasi, bukan folder ZIP pembungkusnya. Struktur root harus memuat `index.html`, `profil-sd.html`, `profil-smp.html`, `galeri.html`, `style.css`, `assets/`, serta dokumen Markdown/JSON. Jangan mengubah nama atau memindahkan file di dalam `assets/`.
+Candidate branch: `niis-website-release`  
+Production branch: `main`  
+PR: #1 — open, not merged (as last checked 23 November 2026)
 
-## GitHub Pages
-1. Buka repository → Settings → Pages.
-2. Pilih Deploy from a branch.
-3. Pilih branch release dan folder `/ (root)` (atau folder yang memang dipilih sebagai document root).
-4. Simpan, tunggu proses publikasi, lalu buka URL yang diberikan GitHub Pages.
-5. Uji keempat halaman, menu mobile, filter galeri, validasi PPDB, pembentukan tautan WhatsApp (tanpa mengirim pesan), Maps, dan seluruh foto.
+**Do not switch GitHub Pages to the release branch or merge PR #1 yet.** The production website remains on its existing source.
 
-## Catatan aset
-Logo dan foto gedung hero memakai URL raw GitHub pada branch `main`, bukan file lokal dalam paket. Pastikan `logo-nur-iman.jpg` dan `gedung-sekolah.jpg` tetap tersedia publik pada branch tersebut. Delapan foto dokumentasi SD/SMP disertakan di `assets/`.
+## Pre-deployment gates
+
+1. Obtain written confirmation from the school for SD/SMP entry fees, monthly SPP, registration form fee, PPDB 2027/2028 requirements and current registration status.
+2. Confirm the WhatsApp Admin number, school address, and Google Maps destination.
+3. Complete browser QA on the candidate URL or local web server:
+   - 390 px, 768 px, and 1366 px viewport widths
+   - all four pages load without missing assets
+   - mobile navigation opens, closes, and updates `aria-expanded`
+   - gallery category filters show the correct cards
+   - required PPDB fields block invalid submission
+   - valid PPDB submission prepares the WhatsApp message; do not send a test message
+   - Maps and WhatsApp links point to the intended destinations
+   - no horizontal overflow, broken images, console errors, or failed network requests
+4. Record the QA outcome and school confirmation before release approval.
+
+## Candidate structure
+
+The publication root must contain `index.html`, `profil-sd.html`, `profil-smp.html`, `galeri.html`, `style.css`, `logo-nur-iman.jpg`, `gedung-sekolah.jpg`, and `assets/`. The documentation files may remain in the repository root.
+
+## GitHub Pages release procedure — only after approval
+
+1. Open repository Settings → Pages.
+2. Confirm the existing production source before changing anything.
+3. Only after explicit approval, select `niis-website-release` and `/(root)` as the Pages source.
+4. Wait for GitHub Pages deployment to complete.
+5. Run the browser QA checklist again against the published URL.
+6. Keep the previous production source available for rollback.
 
 ## Rollback
-Jika rilis bermasalah, ubah sumber GitHub Pages kembali ke branch/folder sebelumnya. Jangan menghapus baseline `main`.
 
-## Batas verifikasi
-Paket ini telah diperiksa secara statis. Browser QA visual/interaktif belum dapat diselesaikan pada lingkungan audit ini karena navigasi Chromium ke `localhost` dan `file://` diblokir oleh kebijakan lingkungan. Lakukan QA browser setelah paket dibuka secara lokal atau setelah deployment ke URL publik.
+If the candidate deployment fails, restore the previous GitHub Pages source (the existing production branch/folder). Do not delete `main`, the release branch, or repository data.
+
+## Known limitations
+
+Browser QA has not yet been certified. Static source inspection is not a substitute for real browser testing. The PPDB fee values are legacy figures pending school confirmation.
