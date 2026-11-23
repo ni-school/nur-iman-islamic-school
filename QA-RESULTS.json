@@ -1,0 +1,54 @@
+{
+  "audit_date": "2026-11-23",
+  "repository": "ni-school/nur-iman-islamic-school",
+  "branch": "niis-website-release",
+  "result": "STATIC_SOURCE_CHECKS_PASS_BROWSER_QA_AND_SCHOOL_CONFIRMATION_BLOCKED",
+  "static_checks": {
+    "four_html_pages_present": true,
+    "all_four_pages_use_local_logo": true,
+    "old_raw_github_logo_url_absent_from_four_pages": true,
+    "stylesheet_uses_local_building_hero": true,
+    "local_logo_file_present": true,
+    "local_building_file_present": true,
+    "eight_documentation_photos_present": true,
+    "sd_smp_photo_segregation_source_reviewed": true,
+    "shared_navigation_present": true,
+    "ppdb_required_fields_and_whatsapp_message_handler_present": true,
+    "gallery_category_filter_handler_present": true,
+    "release_branch_ahead_of_main": 10,
+    "release_branch_behind_main": 0,
+    "pr_1_open_and_unmerged": true
+  },
+  "browser_qa": {
+    "status": "NOT_VERIFIED",
+    "not_certified": [
+      "responsive layout at 390px, 768px, and 1366px",
+      "horizontal overflow",
+      "actual mobile menu interactions",
+      "gallery filter click behavior in a browser",
+      "PPDB form end-to-end behavior",
+      "browser console and network errors"
+    ]
+  },
+  "school_confirmation_required": [
+    "SD entry fee Rp7,000,000 and monthly SPP Rp500,000",
+    "SMP entry fee Rp6,000,000 and monthly SPP Rp400,000",
+    "registration form fee Rp300,000",
+    "PPDB 2027/2028 intake period, requirements, and current registration status",
+    "WhatsApp Admin number, address, and Maps destination"
+  ],
+  "asset_dependencies": {
+    "logo": "local file logo-nur-iman.jpg",
+    "hero_building": "local file gedung-sekolah.jpg",
+    "documentation_photos": "eight local JPG files under assets/",
+    "raw_github_image_urls_required": false
+  },
+  "github": {
+    "connector_installation": "confirmed by user screenshot",
+    "write_access": "verified by successful updates to galeri.html, profil-sd.html, and profil-smp.html",
+    "main_modified": false,
+    "pull_request_1": "open and unmerged",
+    "github_pages_deployment": "not performed"
+  },
+  "release_gate": "DO_NOT_RELEASE_UNTIL_BROWSER_QA_AND_SCHOOL_CONFIRMATION_PASS"
+}
