@@ -1,31 +1,44 @@
-# AUDIT REPORT — NIIS WEBSITE FINAL RELEASE
+# AUDIT REPORT — NIIS WEBSITE RELEASE CANDIDATE
 
-Tanggal audit ulang: 11 November 2026
+Audit update: 23 November 2026  
+Repository: `ni-school/nur-iman-islamic-school`  
+Release branch: `niis-website-release`  
+Production branch: `main` (unchanged; GitHub Pages production source has not been switched)
 
-## Keputusan rilis
-**READY FOR DEPLOYMENT REVIEW.** Struktur paket dan pemeriksaan statis lulus. Browser QA visual/interaktif belum dapat dibuktikan karena Chromium diblokir oleh lingkungan eksekusi. Konfirmasi informasi biaya/PPDB sekolah masih diperlukan.
+## Current decision
 
-## Cakupan
-Empat halaman HTML (`index.html`, `profil-sd.html`, `profil-smp.html`, `galeri.html`), stylesheet bersama, delapan foto dokumentasi lokal, serta README, manifest, hasil QA, dan panduan deployment. ZIP sumber diuji dan tidak melaporkan kerusakan arsip.
+**NOT YET APPROVED FOR PRODUCTION RELEASE.** Repository and static source checks are in good condition, and the local logo/building assets are present. Browser-based visual and end-to-end QA remains unverified, and the school must confirm the displayed PPDB fee information before publication.
 
-## Pemisahan foto
-- **SD:** `1000825926.jpg`, `1000821940.jpg`, `1000821942.jpg`, `1000853316.jpg` (kelulusan putra), `1000853344.jpg` (kelulusan putri). Dipakai pada Beranda, Profil SD, dan Galeri umum sesuai kebutuhan halaman.
-- **SMP:** `1000853322.jpg` (kelulusan putra), `1000853324.jpg` (kelulusan putri), `1000800280.jpg` (pembelajaran Al-Qur’an berseragam kotak-kotak biru). Hanya pada Profil SMP.
-- `lab-komputer.webp` tidak digunakan dalam paket ini; aturan aset tersebut tetap: hanya Profil SMP.
-- `gandengan-01.webp` tidak digunakan sebagai dokumentasi galeri; aturan aset khusus hero/PPDB tetap dipertahankan pada sumber proyek bila dipakai.
-- Tidak ada foto generatif sebagai pengganti dokumentasi. Tidak ada file foto yang diduplikasi di paket.
+## Scope inspected
 
-## Static QA
-Lulus: parsing HTML pada empat halaman; pemeriksaan ID duplikat; referensi file lokal dan tautan internal; sintaks JavaScript inline melalui Node.js; decoding delapan foto; dan pemeriksaan segregasi SD/SMP terhadap dokumen handover. Form PPDB memiliki field wajib dan pola nomor telepon; handler menyusun pesan WhatsApp ke Admin tanpa mengirim otomatis. Filter kategori galeri dan navigasi lintas halaman ditemukan pada kode.
+- Pages: `index.html`, `profil-sd.html`, `profil-smp.html`, `galeri.html`
+- Shared stylesheet: `style.css`
+- Root images: `logo-nur-iman.jpg`, `gedung-sekolah.jpg`
+- Eight local documentation photographs in `assets/`
+- Release documentation: README, deployment guide, QA results, and asset manifest
 
-## Browser QA dan responsivitas
-**NOT VERIFIED.** Playwright/Chromium berhasil diluncurkan, tetapi navigasi ke `file://` dan `http://127.0.0.1` diblokir oleh kebijakan lingkungan (`ERR_BLOCKED_BY_ADMINISTRATOR`). Karena itu, tampilan pada 390/768/1366 px, horizontal overflow, klik nyata, console runtime, dan network failure belum dapat disahkan. Uji browser setelah dibuka pada komputer lokal atau URL publik.
+## Findings — PASS
 
-## Informasi sekolah
-Nama, alamat, WhatsApp, dan tautan Maps mengikuti sumber proyek. Biaya SD masuk Rp7.000.000 dan SPP Rp500.000/bulan; SMP masuk Rp6.000.000 dan SPP Rp400.000/bulan; biaya formulir Rp300.000. Angka ini masih data lama dan berstatus **NEEDS SCHOOL CONFIRMATION** sebelum publikasi. PPDB Tahun Ajaran 2027/2028 dipertahankan tanpa menambahkan tanggal gelombang kedaluwarsa.
+- All four HTML pages reference the local logo `logo-nur-iman.jpg`; the former raw GitHub logo URL is absent from those pages.
+- `style.css` uses the local hero image `gedung-sekolah.jpg`.
+- Both root image files and all eight documentation photographs were found in the release branch.
+- The five SD photographs are used on the home page / SD profile / general gallery as mapped in the source. The three SMP photographs are confined to the SMP profile page.
+- Navigation links between the four pages are present.
+- The home page includes a required-field PPDB form. Its submit handler validates the form and prepares a WhatsApp message to Admin; it does not send the message automatically.
+- The gallery includes category filters and updates `aria-pressed` on filter buttons.
+- The release branch is 10 commits ahead of `main` and 0 behind at the time of this audit. PR #1 remains open and unmerged.
 
-## Dependensi eksternal
-Logo dan foto gedung hero masih menggunakan URL raw GitHub `main`, sehingga bergantung pada koneksi dan keberadaan file di repository. Delapan foto dokumentasi dipaketkan lokal.
+## Findings — BLOCKED / NOT VERIFIED
 
-## Perlindungan baseline dan deployment
-Baseline `index.html` SHA `afdeda4bde6b2ddc6aa44789bf8c431adc75e187` dan `style.css` SHA `d984f885e3fb866c771b177c890cb0edf5554f8d` tetap menjadi acuan dan tidak ditimpa. Tidak ada push GitHub atau deployment. Lihat `DEPLOYMENT-GUIDE.md`.
+- **Browser QA: NOT VERIFIED.** No successful browser-driven test evidence is available in this audit. Responsive rendering, horizontal overflow, real click behavior, browser console, network requests, and WhatsApp handoff must not be treated as passed.
+- **School data confirmation: REQUIRED.** The page currently displays SD entry fee Rp7.000.000, SD SPP Rp500.000/month, SMP entry fee Rp6.000.000, SMP SPP Rp400.000/month, and registration form fee Rp300.000. The page itself says these figures follow the old website and require confirmation. Do not approve production publication until the school confirms or replaces them.
+- Confirm that PPDB 2027/2028 is the correct active intake period and that the requirements / registration status remain current.
+- Confirm the current WhatsApp admin number and school contact/address before production release.
+
+## Asset dependencies
+
+The logo and hero building photograph are now local files in the release branch. The eight documentation photos are also local. No raw GitHub URL is required for these images in the four pages or stylesheet.
+
+## Release protection
+
+No merge was performed. No GitHub Pages source change was performed. Keep `main` as the production baseline until the school confirms the outstanding data and browser QA passes. PR #1 must not be merged without explicit release approval.
