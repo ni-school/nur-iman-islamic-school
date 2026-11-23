@@ -1,29 +1,49 @@
-# ASSET MANIFEST — NIIS WEBSITE FINAL RELEASE
+# ASSET MANIFEST — NIIS WEBSITE RELEASE CANDIDATE
 
-SHA-256 untuk pemeriksaan integritas seluruh file paket.
+Audit snapshot: 23 November 2026  
+Repository: `ni-school/nur-iman-islamic-school`  
+Branch: `niis-website-release`
 
-| File | Ukuran (byte) | Dimensi | SHA-256 |
-|---|---:|---|---|
-| `AUDIT-REPORT.md` | 3099 | — | `fa350b0fe4eb3ecbaf8a33c30eba9442e8c72b06abb59f47e5549d30f46d5535` |
-| `DEPLOYMENT-GUIDE.md` | 1924 | — | `b6fa32ef6f59769ac70e8967c08a7c53a9d066009d3a66fe7ae797ae44926b68` |
-| `QA-RESULTS.json` | 2097 | — | `25ed03e34d57661da92dd355bc42395f8ce9fda8deaf2f98f085accc3aad1f61` |
-| `README-FINAL.md` | 2442 | — | `60fab7d0b483f82c8a6bdb295513b2891d86715ed7eb8fda6f64a3f836312db8` |
-| `assets/1000800280.jpg` | 421577 | 1152 × 1536 | `1dcc24a518b668f3b5cac7414181fe5c062fe803afbacdbc96876b5235e1d8db` |
-| `assets/1000821940.jpg` | 229609 | 1536 × 864 | `ffcca8d03fda9b8f77880e4e83bc0b14170f9315fd75a91e0a087e531001b46e` |
-| `assets/1000821942.jpg` | 276363 | 1536 × 864 | `4e514718d8714e02d99c51244260d59ab75b658f8db9fc272cbb8b39fe7902a0` |
-| `assets/1000825926.jpg` | 300993 | 864 × 1536 | `373a280f9c78f9356efcd33aa5f2f42829f39ca68fe06ed38e97d0e785dc93fa` |
-| `assets/1000853316.jpg` | 386931 | 1536 × 864 | `a54f26297c87544880bf301ee86289004dc6e13ab811aa8bfe829630cce6a15e` |
-| `assets/1000853322.jpg` | 396695 | 1536 × 864 | `28baeff968f1ea0ae61ad88d7ac17109322273c28f1146f9b4c127aa2097e8b2` |
-| `assets/1000853324.jpg` | 389899 | 1536 × 864 | `0064e0e0837fcd900a5ba0e7cfb34b9f5a17a4b873058d40b45dcc0d6bb24f28` |
-| `assets/1000853344.jpg` | 414776 | 1536 × 864 | `9e7a1001e92388b86b2a4ba6bd7cc6ee1860c6f839e92abea0cce11b874fe2af` |
-| `galeri.html` | 4418 | — | `a4f7d71d4a7dbe19c3e08af97c9ec10d1836747aebf7f3214ac56eddabee5ab7` |
-| `index.html` | 10863 | — | `d321040d3ed69e450713e420dfb67f148494538ad49477b7b1d2fecc78d8c01e` |
-| `profil-sd.html` | 3735 | — | `0418757e7cc24413d4fbe6264be84e9a49a93dc535f757e2dc7d7746b58aa1f2` |
-| `profil-smp.html` | 3367 | — | `6e1a30914b4da3e9a3c39ddee00b9be7f773ad31f171ac2a2debb18748f240b2` |
-| `style.css` | 8837 | — | `8f70abab823caebbb8fba27d6a2ba0824c3c260c1da03c8763254dac92a8910b` |
+This inventory records Git blob SHA values returned by GitHub for the current release-branch files. **These are Git object identifiers, not SHA-256 file checksums.** Re-fetch a file to verify its identifier after later commits.
 
-## Aset eksternal
-- Logo: `https://raw.githubusercontent.com/ni-school/nur-iman-islamic-school/main/logo-nur-iman.jpg`
-- Foto gedung hero: `https://raw.githubusercontent.com/ni-school/nur-iman-islamic-school/main/gedung-sekolah.jpg`
+## Application pages and documentation
 
-Kedua aset eksternal tidak disalin ke ZIP; ketersediaannya bergantung pada repository sumber dan jaringan.
+| File | Git blob SHA |
+|---|---|
+| `AUDIT-REPORT.md` | `15cd098e0b51bc1b1f1e82f6fe12d71434a511d8` |
+| `DEPLOYMENT-GUIDE.md` | `ca385ed1c302375caf6702638fc872df72fb7a2e` |
+| `QA-RESULTS.json` | `61217918dca6ccbc1a6c9e2965d62d722f38b178` |
+| `README-FINAL.md` | `8e44ed667885f6f39895ae3c4e92b5e9aa735e2d` |
+| `index.html` | `e9043dd14fe2f23c881b64bc21d4e977c5949f75` |
+| `galeri.html` | `d92eb08ade55df0523a97e1e38f53cee4e3aabbc` |
+| `profil-sd.html` | `ae1e531668dafcc39083b264669578ae34895ae2` |
+| `profil-smp.html` | `7efa2cb0533c0e03f5d2babafb09f7b14bc26dea` |
+| `style.css` | `845e16e8c69ddb936a8404afb09600b2161f88b5` |
+
+## Root image assets
+
+| File | Git blob SHA |
+|---|---|
+| `logo-nur-iman.jpg` | `70abcfabfcd139e67629c2ef98104f5a72500af3` |
+| `gedung-sekolah.jpg` | `08e552caac7a16a7414aca2827593c296a8d11f2` |
+
+## Documentation photographs
+
+| File | Git blob SHA |
+|---|---|
+| `assets/1000800280.jpg` | `23968096ddb93c22d1463f4ddc1b93ee9cfe2854` |
+| `assets/1000821940.jpg` | `6a998389ae40535006b7e70a02b53135b4b5fda7` |
+| `assets/1000821942.jpg` | `60f813c4046a1c1de59f207e35f42afb7994b098` |
+| `assets/1000825926.jpg` | `2bae98eb155de793538988ea2b52c1a02c8fc315` |
+| `assets/1000853316.jpg` | `8c6bd568b91ae1ac08b5b5355e51cfa7b1b14587` |
+| `assets/1000853322.jpg` | `00d1d082d3a75fa71ff07cf8c3c64287f216b271` |
+| `assets/1000853324.jpg` | `5120be70e2dd4de416de87fb4876ed7e185881dd` |
+| `assets/1000853344.jpg` | `252ec8252f2fe1b65b0d5b159c624d3c93ce6f73` |
+
+
+## Asset usage
+
+- All four HTML pages reference local `logo-nur-iman.jpg`.
+- `style.css` references local `gedung-sekolah.jpg` for the hero background.
+- Eight documentation JPG files are stored under `assets/`.
+- No raw GitHub URL is required for the logo, hero image, or documentation photographs.
