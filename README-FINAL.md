@@ -1,40 +1,39 @@
-# NUR IMAN ISLAMIC SCHOOL — FINAL RELEASE PACKAGE
+# NUR IMAN ISLAMIC SCHOOL — RELEASE CANDIDATE
 
 ## Status
-**READY FOR DEPLOYMENT REVIEW**. Paket telah dirapikan dan lolos pemeriksaan statis. Browser QA visual/interaktif diblokir oleh lingkungan audit; konfirmasi biaya dan ketentuan PPDB sekolah masih diperlukan.
 
-## Isi paket
-- `index.html` — Beranda, program, fasilitas, biaya, PPDB, PORTER, kontak dan peta.
+**Release candidate — pending final acceptance.** Static source inspection has passed for the key page and asset references. Browser QA and confirmation of school PPDB data remain outstanding. Production branch `main` has not been changed.
+
+## Package contents
+
+- `index.html` — Beranda, program, fasilitas, biaya, PPDB, kontak, dan peta.
 - `profil-sd.html` — Profil serta dokumentasi SD.
 - `profil-smp.html` — Profil serta dokumentasi SMP.
 - `galeri.html` — Galeri umum dokumentasi SD dengan filter kategori.
-- `style.css` — Stylesheet bersama responsif.
-- `assets/` — Delapan foto dokumentasi asli yang dipulihkan dari dokumen handover.
-- `ASSET-MANIFEST.md` — Ukuran, dimensi, dan checksum aset.
-- `AUDIT-REPORT.md` — Ringkasan audit dan batasan rilis.
-- `QA-RESULTS.json` — Hasil pemeriksaan teknis terstruktur.
-- `DEPLOYMENT-GUIDE.md` — Langkah unggah dan rollback GitHub Pages.
+- `style.css` — Stylesheet bersama.
+- `logo-nur-iman.jpg` — Logo lokal.
+- `gedung-sekolah.jpg` — Foto gedung untuk hero lokal.
+- `assets/` — Delapan foto dokumentasi SD/SMP.
+- `ASSET-MANIFEST.md`, `AUDIT-REPORT.md`, `QA-RESULTS.json`, `DEPLOYMENT-GUIDE.md` — Dokumen pendukung rilis.
 
-## Menjalankan lokal
-Ekstrak ZIP, buka terminal di folder hasil ekstraksi, lalu jalankan `python -m http.server 8000`. Buka `http://localhost:8000`.
+## Run locally
 
-## Pemasangan GitHub Pages
-1. Buat branch khusus renovasi agar baseline tetap aman.
-2. Unggah **isi folder ZIP** ke root branch publikasi (bukan folder pembungkus ZIP).
-3. Pastikan `index.html` berada di root dan folder `assets/` ikut diunggah.
-4. Aktifkan GitHub Pages dari branch/folder tersebut.
-5. Uji keempat halaman pada URL publik, termasuk menu mobile, filter galeri, formulir WhatsApp, logo, foto hero, dan tautan Maps.
+From the repository root, run:
 
-## Ketergantungan aset eksternal
-Logo dan foto gedung hero masih menggunakan URL raw GitHub dari repository `ni-school/nur-iman-islamic-school` branch `main`. Kedua file tersebut harus tetap tersedia dan dapat diakses publik. Delapan foto dokumentasi SD/SMP sudah disertakan lokal di dalam ZIP.
+```bash
+python -m http.server 8000
+```
 
-## Data yang dipertahankan dari situs lama
-- PPDB Tahun Ajaran 2027/2028.
-- WhatsApp Admin: `+62 852-1888-9192`.
-- Biaya lama: SD masuk Rp7.000.000 dan SPP Rp500.000/bulan; SMP masuk Rp6.000.000 dan SPP Rp400.000/bulan; formulir Rp300.000.
-- Alamat: Jl. Tumaritis 1 No. 8, Harjamukti, Cimanggis, Depok.
-- Google Maps: https://maps.app.goo.gl/Vww3KEgYdHxDn97V7
+Then open `http://localhost:8000`.
 
-**Penting:** nominal biaya dan ketentuan pendaftaran perlu konfirmasi sekolah sebelum publikasi. Tidak ada tanggal gelombang atau tanggal kegiatan yang ditambahkan.
+## Assets
 
-Baseline lama `index.html` dan `style.css` tidak diubah. Tidak ada push atau deployment yang dilakukan.
+Logo, hero building image, and all eight documentation photographs are stored locally in this release branch. The four HTML pages use `logo-nur-iman.jpg`; `style.css` uses `gedung-sekolah.jpg`.
+
+## School information requiring confirmation
+
+The current page retains legacy figures: SD entry fee Rp7.000.000 and SPP Rp500.000/month; SMP entry fee Rp6.000.000 and SPP Rp400.000/month; registration form Rp300.000. These amounts must be confirmed by the school before publication. Confirm the PPDB 2027/2028 status, requirements, WhatsApp Admin number, address, and Maps destination as well.
+
+## Release protection
+
+The candidate is on `niis-website-release`. PR #1 targets `main` and remains unmerged. Do not change GitHub Pages source or merge until browser QA and school confirmation are complete and release approval is explicit.
